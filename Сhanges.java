@@ -5,15 +5,17 @@ public class Sol {
 
 	public static void main(String[] args) throws Exception  {
 		ArrayList<String> lines = new ArrayList<String>(); 
-	
-		String fileName1 = "F1"; 
-		String fileName2 = "F2";
+		BufferedReader reader = new BufferedReader(new InputStreamReader(System.in)); 
+		String fileName1 = reader.readLine(); 
+		String fileName2 = reader.readLine();
+		reader.close(); 
+		
 		BufferedReader readerF1 = new BufferedReader(new FileReader(fileName1)); 
 		BufferedReader readerF2 = new BufferedReader(new FileReader(fileName2)); 
+		
 		String currentF1 = readerF1.readLine(); 
 		String currentF2 = readerF2.readLine(); 
 		String nextF1 = null; 
-		System.out.println("start  while"); 
 		while(currentF1  != null && currentF2 !=null) {
 			if(currentF1.equals(currentF2)) {
 				lines.add("Same " + currentF1); 
