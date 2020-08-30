@@ -38,7 +38,6 @@ public class Sol {
 		readerF2.close();
 		if (currentF1 == null && currentF2 != null) {
 			lines.add("Add " + currentF2);
-			System.out.println("nen"); 
 		} else {
 			if (currentF1 != null && currentF2 == null) {
 				lines.add("Remove " + currentF1);
