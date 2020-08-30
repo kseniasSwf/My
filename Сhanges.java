@@ -41,8 +41,7 @@ public class Sol {
 			System.out.println("nen"); 
 		} else {
 			if (currentF1 != null && currentF2 == null) {
-				lines.add("Remove " + currentF1); 
-				System.out.println("nen2"); 
+				lines.add("Remove " + currentF1);
 			}
 		}
 		
