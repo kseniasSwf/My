@@ -1,0 +1,35 @@
+//I'm better than Khrushchev
+import java.util.*;
+import java.lang.ref.*;
+import java.lang.Throwable; 
+
+public class CatsLiveInHearts {
+    public static void main(String[]args) throws Exception {
+        Cat nullCat = new Cat("cat null"); 
+        nullCat = null; 
+        ArrayList<Cat> list = new ArrayList<Cat>(); 
+        for (int i = 0 ; i < 10; i++){
+            list.add(new Cat("котик старший" + i)); 
+        } 
+        list.remove(0); 
+        list.remove(0); 
+        list = new ArrayList<Cat>(); 
+
+        for (int i = 0; i < 1000; i++){
+            new Cat("cat " + i); 
+        }
+        System.gc(); 
+
+    }
+    public static class Cat{
+        String name; 
+        long date; 
+        Cat(String name){
+            this.name = name; 
+            date = System.currentTimeMillis(); 
+        }
+        protected void finalize() throws Throwable{
+            System.out.println("удалил " + this.name + ", прожил " +(System.currentTimeMillis() - this.date)); 
+        }
+    }
+}
